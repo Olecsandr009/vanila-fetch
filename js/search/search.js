@@ -11,6 +11,7 @@ const result = document.querySelector('[data-result]')
 const searchCount = document.querySelector('[data-search-count]')
 const cards = document.querySelector('[data-cards]')
 const list = document.querySelector('[data-result-list]')
+const loading = document.querySelector('[data-search-loading]')
 
 let inputValue = ''
 
@@ -41,12 +42,14 @@ searchBtn.addEventListener('click', async e => {
 const processChange = debounce(async () => {
 	if(inputValue.length > 2) {
 		try {
-			const products = await getSearch(inputValue, 10)
+			const products = await getSearch(inputValue, 5)
 
 			getResults(products, list)
 
 		} catch(e) {
 			console.log(e)
+		} finally {
+			loading.classList.remove('active')
 		}
 	}
 }, 1500)
@@ -56,7 +59,7 @@ input.addEventListener('input', async (e) => {
 	inputValue = e.target.value
 	list.innerHTML = ""
 	searchModal(input, result)
-	
+	loading.classList.add('active')
 	processChange()
 })
 
