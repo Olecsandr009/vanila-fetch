@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Internet-shop</title>
+</head>
+
+<body>
+	<div class='wrapper'>
+		<!-- Header -->
+		<header class='header'>
+			<div class='header__container container'>
+				<div class='header__wrapper'>
+					<a class='header__logo' href='/'>
+						<img src='./img/logo.png' alt='logo' />
+					</a>
+					<form class='header__form' action=''>
+						<button data-search class='header__search'>
+							<svg style="width: 16px; height: 16px;">
+								<use xlink:href="./img/icons/search.svg#search"></use>
+							</svg>
+						</button>
+						
+						<!-- Input Search and Result -->
+						<label class='header__label'>
+							<input data-input class='header__input' type='search' placeholder='search' />
+						</label>
+						<button data-close class='header__close'>
+							<svg style="width: 16px; height: 16px;">
+								<use xlink:href="./img/icons/close.svg#close"></use>
+							</svg>
+						</button>
+						<div data-result class='header__result'>
+							<p class='header__result-text'>Результат пошуку:</p>
+							<!-- Modal result -->
+							<ul data-result-list class="header__result-list">
+								<li class="header__result-item">
+									<div class="header__product">
+										<img src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg" alt="Product" />
+									</div>
+									<div class="header__result-content">
+										<div class="header__product-left">
+											<h3 class="header__product-name">iPhone 9</h3>
+											<p class="header__product-text">An apple mobile which is nothing like apple</p>
+
+											<div class="header__product-price">
+												<!-- Price -->
+												<p class="header__product-discount">549</p>
+												<p class="header__product-price_value">12.96</p>
+											</div>
+										</div>
+										<dvi class="header__product-right">
+											<div class="header__product-rating">
+												<!-- Rating	 -->
+												<div class="header__product-rating-body">
+													<div class="header__product-rating-active" style="width: 4.60%;"></div>
+												</div>
+												<p class="header__product-stock">94</p>				
+											</div>
+											
+											<p class="header__product-brand">Apple</p>
+										</dvi>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</form>
+					<div class='header__content'>
+						<div class='header__profile'>
+							<button class='header__auth'>Увійти</button>
+							<button class='header__ava'>
+								<img src='./img/logo.png' alt='ava' />
+							</button>
+						</div>
+						<a class='header__likes' href='/'>
+							<svg style="width: 32px; height: 32px;">
+								<use xlink:href="./img/icons/like.svg#like"></use>
+							</svg>
+						</a>
+						<a class='header__cart' href='/'>
+							<p class='header__cart-count'>1</p>
+							<svg style="width: 32px; height: 32px;">
+								<use xlink:href="./img/icons/cart.svg#cart"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class='main'>
+			<section class='catalog'>
+				<div class='catalog__container container'>
+					<aside class='catalog__sidebar'>
+						<h2 class='catalog__sidebar-title'>Ціна:</h2>
+						<form class='catalog__range' action='#'>
+							<label class='catalog__range-label'>
+								<input class='catalog__range-input' type='number' placeholder='0'>
+							</label>
+							<span class='catalog__range-span'>-</span>
+							<label class='catalog__range-label'>
+								<input class='catalog__range-input' type='number' placeholder='100000'>
+							</label>
+						</form>
+						<h2 class='catalog__sidebar-title'>Катогорії:</h2>
+						<form class='catalog__check' action='#'>
+							<ul class='catalog__list'>
+								<li class='catalog__item'>
+									<label for='checkbox1' class='catalog__check-label active'>
+										<span class='catalog__checkbox-span'>
+											<svg style="width: 14px; height: 14px;">
+												<use xlink:href="./img/icons/check.svg#check"></use>
+											</svg>
+										</span>
+										<input id='checkbox1' class='catalog__checkbox' type='checkbox'>
+										<p class='catalog__category'>Category</p>
+									</label>
+								</li>
+								<li class='catalog__item'>
+									<label for='checkbox1' class='catalog__check-label'>
+										<span class='catalog__checkbox-span'>
+											<svg style="width: 14px; height: 14px;">
+												<use xlink:href="./img/icons/check.svg#check"></use>
+											</svg>
+										</span>
+										<input id='checkbox1' class='catalog__checkbox' type='checkbox'>
+										<p class='catalog__category'>Category</p>
+									</label>
+								</li>
+								<li class='catalog__item'>
+									<label for='checkbox1' class='catalog__check-label'>
+										<span class='catalog__checkbox-span'>
+											<svg style="width: 14px; height: 14px;">
+												<use xlink:href="./img/icons/check.svg#check"></use>
+											</svg>
+										</span>
+										<input id='checkbox1' class='catalog__checkbox' type='checkbox'>
+										<p class='catalog__category'>Category</p>
+									</label>
+								</li>
+								<li class='catalog__item'>
+									<label for='checkbox1' class='catalog__check-label'>
+										<span class='catalog__checkbox-span'>
+											<svg style="width: 14px; height: 14px;">
+												<use xlink:href="./img/icons/check.svg#check"></use>
+											</svg>
+										</span>
+										<input id='checkbox1' class='catalog__checkbox' type='checkbox'>
+										<p class='catalog__category'>Category</p>
+									</label>
+								</li>
+							</ul>
+						</form>
+					</aside>
+					<div class='catalog__content'>
+						<div class='catalog__catalog-data'>
+							<div class='catalog__catalog-text'>
+								<h2 class='catalog__catalog-title'>Товари</h2>
+								<p class='catalog__count'>Кількість знайдених товарів: <span data-search-count>0</span>
+								</p>
+							</div>
+							<div class='catalog__catalog-sort'>
+								<select class='catalog__catalog-select'>
+									<option>За ціною</option>
+									<option>За рейтингом</option>
+								</select>
+							</div>
+						</div>
+						<div data-cards class='catalog__cards'></div>
+						<div class='catalog__pagination'></div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class='footer'>
+			<div class='footer__container container'>
+				<div class='footer__wrapper'>
+					<div class='footer__logo'>
+						<img src='./img/logo.png' alt='logo' />
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script type='module' src='./js/main.js'></script>
+</body>
+
+</html>
