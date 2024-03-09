@@ -23,6 +23,7 @@ searchBtn.addEventListener('click', async e => {
 
 		if(products.length) {
 			searchCount.innerHTML = products.length
+			cards.innerHTML = ''
 			
 			for (let i = 0; i < products.length; i++) {
 				cards.insertAdjacentHTML('beforeend', card(products[i]))
@@ -37,14 +38,26 @@ searchBtn.addEventListener('click', async e => {
 	}
 })
 
+const processChange = debounce(async () => {
+	if(inputValue.length > 2) {
+		try {
+			const products = await getSearch(inputValue, 10)
+
+			getResults(products, list)
+
+		} catch(e) {
+			console.log(e)
+		}
+	}
+}, 1500)
+
+
 input.addEventListener('input', async (e) => {
 	inputValue = e.target.value
+	list.innerHTML = ""
 	searchModal(input, result)
-    const products = await getSearch(inputValue, 10)
-
-    if(inputValue.length > 2) {
-        debounce(getResults(products, list), 500)
-    }
+	
+	processChange()
 })
 
 closeBtn.addEventListener('click', e => {

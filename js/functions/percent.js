@@ -1,3 +1,3 @@
 export function percent(num) {
-    return (5 / 100) * +num
+    return (100 / 5) * +num
 }
