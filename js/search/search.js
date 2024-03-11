@@ -43,7 +43,6 @@ const processChange = debounce(async () => {
 	if(inputValue.length > 2) {
 		try {
 			const products = await getSearch(inputValue, 5)
-
 			getResults(products, list)
 
 		} catch(e) {

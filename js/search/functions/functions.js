@@ -15,7 +15,6 @@ export async function getSearch(value, limit) {
 
 		const response = await fetch(url)
 		const data = await response.json()
-
 		return data.products
 	} catch(e) {
 		console.log(e)

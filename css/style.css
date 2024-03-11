@@ -472,6 +472,7 @@ body {
 }
 
 .catalog__content {
+	flex: 0 1 100%
 }
 .catalog__catalog-data {
 	background-color: var(--color-secondary);
