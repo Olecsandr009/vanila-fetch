@@ -45,17 +45,6 @@
 						</div>
 					</form>
 					<div class='header__content'>
-						<div class='header__profile'>
-							<button class='header__auth'>Увійти</button>
-							<button class='header__ava'>
-								<img src='./img/logo.png' alt='ava' />
-							</button>
-						</div>
-						<a class='header__likes' href='/'>
-							<svg style="width: 32px; height: 32px;">
-								<use xlink:href="./img/icons/like.svg#like"></use>
-							</svg>
-						</a>
 						<a class='header__cart' href='/'>
 							<p class='header__cart-count'>1</p>
 							<svg style="width: 32px; height: 32px;">
@@ -70,34 +59,12 @@
 		<main class='main'>
 			<section class='catalog'>
 				<div class='catalog__container container'>
-					<aside class='catalog__sidebar'>
-						<h2 class='catalog__sidebar-title'>Ціна:</h2>
-						<form class='catalog__range' action='#'>
-							<label class='catalog__range-label'>
-								<input class='catalog__range-input' type='number' placeholder='0'>
-							</label>
-							<span class='catalog__range-span'>-</span>
-							<label class='catalog__range-label'>
-								<input class='catalog__range-input' type='number' placeholder='100000'>
-							</label>
-						</form>
-						<h2 class='catalog__sidebar-title'>Катогорії:</h2>
-						<form class='catalog__check' action='#'>
-							<ul data-category-list class='catalog__list'></ul>
-						</form>
-					</aside>
 					<div class='catalog__content'>
 						<div class='catalog__catalog-data'>
 							<div class='catalog__catalog-text'>
 								<h2 class='catalog__catalog-title'>Товари</h2>
 								<p class='catalog__count'>Кількість знайдених товарів: <span data-search-count>0</span>
 								</p>
-							</div>
-							<div class='catalog__catalog-sort'>
-								<select class='catalog__catalog-select'>
-									<option>За ціною</option>
-									<option>За рейтингом</option>
-								</select>
 							</div>
 						</div>
 						<div data-cards class='catalog__cards'></div>
@@ -106,16 +73,6 @@
 				</div>
 			</section>
 		</main>
-
-		<footer class='footer'>
-			<div class='footer__container container'>
-				<div class='footer__wrapper'>
-					<div class='footer__logo'>
-						<img src='./img/logo.png' alt='logo' />
-					</div>
-				</div>
-			</div>
-		</footer>
 	</div>
 
 	<script type='module' src='./js/main.js'></script>
