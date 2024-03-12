@@ -45,12 +45,39 @@
 						</div>
 					</form>
 					<div class='header__content'>
-						<a class='header__cart' href='/'>
-							<p class='header__cart-count'>1</p>
-							<svg style="width: 32px; height: 32px;">
-								<use xlink:href="./img/icons/cart.svg#cart"></use>
-							</svg>
-						</a>
+						<div class="header__cart">
+							<a class='header__cart-link' href='/'>
+								<p class='header__cart-count'>1</p>
+								<svg style="width: 24px; height: 24px;">
+									<use xlink:href="./img/icons/cart.svg#cart"></use>
+								</svg>
+							</a>
+							<div class="header__cart-modal">
+								<p class="header__cart-text">Вибрані товари</p>
+								<ul class="header__cart-list">
+									<li class="header__cart-item">
+										<div class="header__cart-media">
+											<img src="/img/logo.png" alt="Product"/>
+										</div>
+										<div class="header__cart-content">
+											<p class="header__cart-name">
+												Product
+											</p>
+											<div class="header__cart-price">
+												<p class="header__cart-old-price">1200$</p>
+												<p class="header__cart-discount">1000$</p>
+											</div>
+										</div>
+										<button class="header__cart-close">
+											<svg style="width: 16px; height: 16px;">
+												<use xlink:href="./img/icons/close.svg#close"></use>
+											</svg>
+										</button>
+									</li>
+								</ul>
+								<button class="header__cart-submit">Оформити замовлення</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
