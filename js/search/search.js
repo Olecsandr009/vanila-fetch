@@ -1,4 +1,4 @@
-import { card } from '../card/card.js'
+import { card } from '../product/card/card.js'
 import { debounce } from '../functions/debounce.js'
 import { getResults } from './result.js'
 
@@ -29,6 +29,9 @@ searchBtn.addEventListener('click', async e => {
 			for (let i = 0; i < products.length; i++) {
 				cards.insertAdjacentHTML('beforeend', card(products[i]))
 			}
+
+			const event = new Event('cards')
+			cards.dispatchEvent(event)
 		}
 
 	} catch(e) {
