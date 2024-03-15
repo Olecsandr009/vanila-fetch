@@ -16,6 +16,8 @@ cards.addEventListener("cards", e => {
                     const currentId = button.parentElement.parentElement.dataset.product
                     const product = await getProduct(currentId)
                     
+                    product.quantity = 1
+
                     setLocalStorage("products", product)
                 } catch(e) {
                     console.log(e)
