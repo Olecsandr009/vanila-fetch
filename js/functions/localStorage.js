@@ -50,3 +50,26 @@ export function deleteItemStorage(item, storage) {
         return false
     }
 }
+
+// Is have item storage
+export function isHaveItemStorage(item, storage) {
+    try {
+        const json = getLocalStorage(storage)
+        const storageData = JSON.parse(json)
+        let resultEl
+
+        if(storageData.length) {
+            storageData.forEach((element) => {
+                if(parseInt(item.id) === parseInt(element.id)) {
+                    resultEl = element
+                }
+            })
+        }
+
+        if(resultEl) return resultEl
+        else return false
+    } catch(e) {
+        console.log(e)
+        return false
+    }
+}

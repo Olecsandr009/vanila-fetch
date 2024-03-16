@@ -8,6 +8,10 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 	<link rel="stylesheet" href="./css/style.css">
 	<title>Internet-shop</title>
 </head>
@@ -54,27 +58,10 @@
 							</a>
 							<div class="header__cart-modal">
 								<p class="header__cart-text">Вибрані товари</p>
-								<ul data-cart-list class="header__cart-list">
-									<li class="header__cart-item">
-										<div class="header__cart-media">
-											<img src="/img/logo.png" alt="Product"/>
-										</div>
-										<div class="header__cart-content">
-											<p class="header__cart-name">
-												Product
-											</p>
-											<div class="header__cart-price">
-												<p class="header__cart-old-price">1200$</p>
-												<p class="header__cart-discount">1000$</p>
-											</div>
-										</div>
-										<button data-cart-submit class="header__cart-close">
-											<svg style="width: 16px; height: 16px;">
-												<use xlink:href="./img/icons/close.svg#close"></use>
-											</svg>
-										</button>
-									</li>
-								</ul>
+								<ul data-cart-list class="header__cart-list"></ul>
+								<div class="header__cart-result">
+									<p class="header__cart-result-text">Загальна ціна: <span data-all-price>0</span>$</p>
+								</div>
 								<button class="header__cart-submit">Оформити замовлення</button>
 							</div>
 						</div>
@@ -98,6 +85,83 @@
 						<div class='catalog__pagination'></div>
 					</div>
 				</div>
+
+				<div data-popup class="popup">
+					<div data-shadow class="popup__shadow"></div>
+					<div class="popup__modal">
+						<h2 class="popup__title">Картка товару</h2>
+						<button class="popup__close">
+							<svg style="width: 16px; height: 16px;">
+								<use xlink:href="./img/icons/close.svg#close"></use>
+							</svg>
+						</button>
+						<div class="popup__slider">
+							<div class="popup__swiper swiper mySwiper2">
+								<div class="popup__wrapper swiper-wrapper">
+									<div class="popup__slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/1.jpg" alt="product"/>
+									</div>
+									<div class="popup__slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/2.jpg" alt="product"/>
+									</div>
+									<div class="popup__slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/3.jpg" alt="product"/>
+									</div>
+									<div class="popup__slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/4.jpg" alt="product"/>
+									</div>
+									<div class="popup__slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg" alt="product"/>
+									</div>	
+								</div>
+								<!-- <div class="popup__slide-navigation">
+									<button class="popup__slide-prev swiper-button-prev"></button>
+									<button class="popup__slide-next swiper-button-next"></button>
+								</div> -->
+							</div>
+							<div thumbsSlider="" class="popup__thumbs swiper mySwiper">
+								<div class="popup__thumbs-wrapper swiper-wrapper">
+									<div class="popup__thumbs-slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/1.jpg" alt="product"/>
+									</div>
+									<div class="popup__thumbs-slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/2.jpg" alt="product"/>
+									</div>
+									<div class="popup__thumbs-slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/3.jpg" alt="product"/>
+									</div>
+									<div class="popup__thumbs-slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/4.jpg" alt="product"/>
+									</div>
+									<div class="popup__thumbs-slide swiper-slide">
+										<img src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg" alt="product"/>
+									</div>	
+								</div>
+							</div>
+						</div>
+						<div class="popup__content">
+							<div class="popup__left">
+								<h3 class="popup__name">iPhone 9</h3>
+								<p class="popup__description">An apple mobile which is nothing like apple</p>
+								<p class="popup__brand">Apple</p>
+							</div>
+							<div class="popup__right">
+								<div class="popup__rating">
+									<p class="popup__stock">230</p>
+									<div class="popup__rating-body">
+										<div class="popup__rating-active" style="width: 78%;"></div>
+									</div>
+								</div>
+								<div class="popup__price">
+									<p class="popup__discount">120</p>
+									<p class="popup__price-value">100</p>
+								</div>
+								<button class="popup__buy">Купити</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</section>
 		</main>
 	</div>

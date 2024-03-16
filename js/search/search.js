@@ -26,9 +26,6 @@ document.addEventListener("DOMContentLoaded", async e => {
 			for(let i = 0; i < products.length; i++) {
 				cards.insertAdjacentHTML("beforeend", card(products[i]))
 			}
-
-			const event = new Event('cards')
-			cards.dispatchEvent(event)
 		}
 	} catch(e) {
 		console.log(e)
