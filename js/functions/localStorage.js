@@ -25,3 +25,28 @@ export async function setLocalStorage(storage, data) {
     }
 
 }
+
+// Delete localStorage product
+export function deleteItemStorage(item, storage) {
+    try {
+        const json = localStorage[storage]
+        const storageData = JSON.parse(json)
+
+        let storageIndex
+
+        for(let i = 0; i < storageData.length; i++) {
+            if(storageData[i].id == item.id) {
+                storageIndex = i
+                break
+            }
+        }
+
+        storageData.splice(storageIndex, 1)
+
+        localStorage[storage] = JSON.stringify(storageData)
+        return true
+    } catch(e) {
+        console.log(e)
+        return false
+    }
+}

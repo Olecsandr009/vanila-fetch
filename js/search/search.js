@@ -15,6 +15,26 @@ const loading = document.querySelector('[data-search-loading]')
 
 let inputValue = ''
 
+document.addEventListener("DOMContentLoaded", async e => {
+	try {
+		const products = await getSearch("", 0)
+
+		if(products.length) {
+			searchCount.innerHTML = products.length
+			cards.innerHTML = ""
+
+			for(let i = 0; i < products.length; i++) {
+				cards.insertAdjacentHTML("beforeend", card(products[i]))
+			}
+
+			const event = new Event('cards')
+			cards.dispatchEvent(event)
+		}
+	} catch(e) {
+		console.log(e)
+	}
+})
+
 searchBtn.addEventListener('click', async e => {
 	e.preventDefault()
     let products = ''

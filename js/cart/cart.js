@@ -1,12 +1,39 @@
-import { getLocalStorage } from "../functions/localStorage.js"
+import { deleteItemStorage, getLocalStorage } from "../functions/localStorage.js"
 import { maxQuantity, minQuantity } from "../functions/quantity.js"
 import { setCartList } from "./functions/functions.js"
-
-const products = document.querySelectorAll("[data-product]")
-let quantity = document.querySelectorAll("[data-quantity]")
+import { getProduct } from "../product/functions/functions.js"
 
 const list = document.querySelector("[data-cart-list]")
-const submit = document.querySelector("[data-cart-submit]")
+
+list.addEventListener("click", async e => {
+    e.preventDefault()
+
+    if(e.target.closest("[data-cart-delete]")) {
+        const parentElement = e.target.closest("[data-cart-delete]")
+
+        const productId = parentElement.parentElement.dataset.cart
+        const product = await getProduct(productId)
+
+        deleteItemStorage(product, "products")
+
+        const event = new Event("localStorage")
+        document.dispatchEvent(event)
+    }
+
+    if(e.target.closest("[data-quantity-min]")) {
+        const minElement = e.target.closest("[data-quantity-min]")
+        const parentElement = minElement.parentElement
+
+        minQuantity(parentElement)
+    }
+
+    if(e.target.closest("[data-quantity-max")) {
+        const maxElement = e.target.closest("[data-quantity-max]")
+        const parentElement = maxElement.parentElement
+
+        maxQuantity(parentElement)
+    }
+})
 
 
 document.addEventListener("DOMContentLoaded", e => {
@@ -14,19 +41,6 @@ document.addEventListener("DOMContentLoaded", e => {
     const products = JSON.parse(json)
 
     setCartList(products, list)
-    quantity = document.querySelectorAll("[data-quantity]")
-
-    if(quantity.length) {
-        quantity.forEach((element) => {
-            element.children[0].addEventListener("click", e => {
-                minQuantity(element)
-            })
-
-            element.children[2].addEventListener("click", e => {
-                maxQuantity(element)
-            })
-        })
-    }
 })
 
 document.addEventListener("localStorage", e => {
@@ -34,5 +48,4 @@ document.addEventListener("localStorage", e => {
     const products = JSON.parse(json)
 
     setCartList(products, list)
-    quantity = document.querySelectorAll("[data-quantity]")
 })
