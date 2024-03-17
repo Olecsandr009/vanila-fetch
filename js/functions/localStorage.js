@@ -1,6 +1,29 @@
-// get localStorage product
+// get localStorage products
 export function getLocalStorage(storage) {
     return localStorage.getItem(storage)
+}
+
+// get localStorage product
+export function getItemStorage(storage, id) {
+    try {
+        const json = getLocalStorage(storage.toString())
+        const products = JSON.parse(json)
+
+        let product
+
+        if(products.length) {
+            products.forEach((element) => {
+                if(parseInt(element.id) === parseInt(id)) {
+                    product = element
+                }
+            })
+        }
+
+        return product
+    } catch(e) {
+        console.log(e)
+        return false
+    }
 }
 
 // Set localStorage product
@@ -9,7 +32,7 @@ export async function setLocalStorage(storage, data) {
         const json = getLocalStorage(storage.toString())
         const products = JSON.parse(json)
 
-        if(products) {
+        if(products.length) {
             products.push(data)
             localStorage.setItem(storage.toString(), JSON.stringify(products))
         } else {

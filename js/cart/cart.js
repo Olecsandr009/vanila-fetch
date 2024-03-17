@@ -1,6 +1,5 @@
 import { deleteItemStorage, getLocalStorage } from "../functions/localStorage.js"
-import { maxQuantity, minQuantity } from "../functions/quantity.js"
-import { setCartList } from "./functions/functions.js"
+import { maxQuantityStore, minQuantityStore, setCartList } from "./functions/functions.js"
 import { getProduct } from "../product/functions/functions.js"
 import { priceValue } from "../functions/price.js"
 
@@ -28,14 +27,14 @@ list.addEventListener("click", async e => {
         const minElement = e.target.closest("[data-quantity-min]")
         const parentElement = minElement.parentElement
 
-        minQuantity(parentElement)
+        minQuantityStore(parentElement)
     }
 
     if(e.target.closest("[data-quantity-max")) {
         const maxElement = e.target.closest("[data-quantity-max]")
         const parentElement = maxElement.parentElement
 
-        maxQuantity(parentElement)
+        maxQuantityStore(parentElement)
     }
 })
 
