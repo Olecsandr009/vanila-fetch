@@ -90,14 +90,14 @@
 					<div data-shadow class="popup__shadow"></div>
 					<div class="popup__modal">
 						<h2 class="popup__title">Картка товару</h2>
-						<button class="popup__close">
+						<button data-popup-close class="popup__close">
 							<svg style="width: 16px; height: 16px;">
 								<use xlink:href="./img/icons/close.svg#close"></use>
 							</svg>
 						</button>
 						<div class="popup__slider">
 							<div class="popup__swiper swiper mySwiper2">
-								<div class="popup__wrapper swiper-wrapper">
+								<div data-slider class="popup__wrapper swiper-wrapper">
 									<div class="popup__slide swiper-slide">
 										<img src="https://cdn.dummyjson.com/product-images/1/1.jpg" alt="product"/>
 									</div>
@@ -120,7 +120,7 @@
 								</div> -->
 							</div>
 							<div thumbsSlider="" class="popup__thumbs swiper mySwiper">
-								<div class="popup__thumbs-wrapper swiper-wrapper">
+								<div data-slider class="popup__thumbs-wrapper swiper-wrapper">
 									<div class="popup__thumbs-slide swiper-slide">
 										<img src="https://cdn.dummyjson.com/product-images/1/1.jpg" alt="product"/>
 									</div>
@@ -139,7 +139,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="popup__content">
+						<div data-content class="popup__content">
 							<div class="popup__left">
 								<h3 class="popup__name">iPhone 9</h3>
 								<p class="popup__description">An apple mobile which is nothing like apple</p>
@@ -156,7 +156,7 @@
 									<p class="popup__discount">120</p>
 									<p class="popup__price-value">100</p>
 								</div>
-								<button class="popup__buy">Купити</button>
+								<button data-popup-buy class="popup__buy">Купити</button>
 							</div>
 						</div>
 					</div>

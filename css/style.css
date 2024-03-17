@@ -750,7 +750,8 @@ body {
 	opacity: 1;
 }
 .popup__shadow {
-	background-color: var(--color-primary-modal);
+	/* background-color: var(--color-primary-modal); */
+	background-color: transparent;
   	-webkit-backdrop-filter: blur(4px);
   	backdrop-filter: blur(5px);
 	width: 100%;
@@ -770,6 +771,7 @@ body {
 	transform: translate(-50%, 150%);
 	background-color: var(--color-primary-modal);
 	padding: 16px;
+	/* border: 2px solid var(--color-primary); */
 	border-radius: 16px;
 	box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 	opacity: 0;

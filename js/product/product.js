@@ -2,6 +2,7 @@ import { getProduct } from "./functions/functions.js"
 import { deleteItemStorage, isHaveItemStorage, setLocalStorage } from "../functions/localStorage.js"
 
 const cards = document.querySelector("[data-cards]")
+const popup = document.querySelector("[data-popup]")
 
 cards.addEventListener("click", async e => {
     e.preventDefault()
@@ -23,6 +24,19 @@ cards.addEventListener("click", async e => {
                 
                 setLocalStorage("products", product)
             }
+        } catch(e) {
+            console.log(e)
+        }
+    }
+
+    if(e.target.closest("[data-product-link]")) {
+        try {
+            const link = e.target.closest("[data-product-link]")
+            const currentId = link.closest("[data-product]").dataset.product
+            const product = await getProduct(currentId)
+
+            popup.dataset.popup = currentId
+            popup.classList.add('active')    
         } catch(e) {
             console.log(e)
         }

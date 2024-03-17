@@ -3,6 +3,7 @@ import { debounce } from '../functions/debounce.js'
 import { getResults } from './result.js'
 
 import { getSearch, searchModal } from './functions/functions.js'
+import { getProduct } from '../product/functions/functions.js'
 
 const searchBtn = document.querySelector('[data-search]')
 const input = document.querySelector('[data-input]')
@@ -30,6 +31,24 @@ document.addEventListener("DOMContentLoaded", async e => {
 	} catch(e) {
 		console.log(e)
 	}
+})
+
+list.addEventListener("click", async e => {
+	e.preventDefault()
+
+	if(e.target.closest("[data-product-link]")) {
+		console.log(e.target)
+        try {
+            const link = e.target.closest("[data-product-link]")
+            const currentId = link.closest("[data-product]").dataset.product
+            const product = await getProduct(currentId)
+
+            popup.dataset.popup = currentId
+            popup.classList.add('active')    
+        } catch(e) {
+            console.log(e)
+        }
+    }
 })
 
 searchBtn.addEventListener('click', async e => {

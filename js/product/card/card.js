@@ -5,7 +5,7 @@ export function card(product) {
 					<img src="${product.thumbnail}" alt='Product' />
 				</div>
 				<div class='catalog__card-content'>
-					<h3 class='catalog__card-name'>${product.title}</h3>
+					<a data-product-link href="" class='catalog__card-name'>${product.title}</a>
 					<p class='catalog__card-text'>${product.description}</p>
 					<button data-card-buy class='catalog__card-button button'>Купити</button>
 				</div>

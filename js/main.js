@@ -4,6 +4,7 @@ import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 import './search/search.js'
 import './product/product.js'
 import './cart/cart.js'
+import './productInfo/productInfo.js'
 
 const swiper = new Swiper(".mySwiper", {
     spaceBetween: 10,

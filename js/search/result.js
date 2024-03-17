@@ -17,7 +17,7 @@ export function result(product) {
             </div>
             <div class="header__result-content">
                 <div class="header__product-left">
-                    <h3 class="header__product-name">${product.title}</h3>
+                    <a href="" data-product-link class="header__product-name">${product.title}</a>
                     <p class="header__product-text">${product.description}</p>
 
                     <div class="header__product-price">

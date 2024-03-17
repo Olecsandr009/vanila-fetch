@@ -22,7 +22,7 @@ list.addEventListener("click", async e => {
         const event = new Event("localStorage")
         document.dispatchEvent(event)
     }
-
+    
     if(e.target.closest("[data-quantity-min]")) {
         const minElement = e.target.closest("[data-quantity-min]")
         const parentElement = minElement.parentElement
