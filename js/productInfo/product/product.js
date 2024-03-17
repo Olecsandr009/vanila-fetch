@@ -18,15 +18,15 @@ export function content(product) {
             <div class="popup__price">
                 ${price(product.price, product.discountPercentage)}
             </div>
-            <button class="popup__buy">Купити</button>
+            <button data-popup-buy class="popup__buy">Купити</button>
         </div>
     `
 }
 
-export function sliderList(product) {
+export function sliderList(product, element) {
     if(product && product.images.length) {
         product.images.forEach((image) => {
-            slider(image)
+            element.insertAdjacentHTML("beforeend", slider(image))
         })
     }
 }

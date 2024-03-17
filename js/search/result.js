@@ -11,7 +11,7 @@ export function getResults(products, list) {
 
 export function result(product) {
     return `
-        <li class="header__result-item">
+        <li data-product-cart="${product.id}" class="header__result-item">
             <div class="header__product">
                 <img src=${product.thumbnail} alt="Product" />
             </div>

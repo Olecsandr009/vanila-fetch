@@ -14,6 +14,8 @@ const cards = document.querySelector('[data-cards]')
 const list = document.querySelector('[data-result-list]')
 const loading = document.querySelector('[data-search-loading]')
 
+const popup = document.querySelector("[data-popup]")
+
 let inputValue = ''
 
 document.addEventListener("DOMContentLoaded", async e => {
@@ -40,11 +42,13 @@ list.addEventListener("click", async e => {
 		console.log(e.target)
         try {
             const link = e.target.closest("[data-product-link]")
-            const currentId = link.closest("[data-product]").dataset.product
-            const product = await getProduct(currentId)
+            const currentId = link.closest("[data-product-cart]").dataset.productCart
 
             popup.dataset.popup = currentId
-            popup.classList.add('active')    
+            popup.classList.add('active')
+
+			const event = new Event("productInfo")
+			popup.dispatchEvent(event)
         } catch(e) {
             console.log(e)
         }

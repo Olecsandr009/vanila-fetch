@@ -4,6 +4,8 @@ import { deleteItemStorage, isHaveItemStorage, setLocalStorage } from "../functi
 const cards = document.querySelector("[data-cards]")
 const popup = document.querySelector("[data-popup]")
 
+const body = document.body
+
 cards.addEventListener("click", async e => {
     e.preventDefault()
 
@@ -36,7 +38,12 @@ cards.addEventListener("click", async e => {
             const product = await getProduct(currentId)
 
             popup.dataset.popup = currentId
-            popup.classList.add('active')    
+            popup.classList.add('active')  
+            
+            body.style.overflow = "hidden"
+            
+            const event = new Event("productInfo")
+            popup.dispatchEvent(event)
         } catch(e) {
             console.log(e)
         }
