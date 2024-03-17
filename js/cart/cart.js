@@ -5,8 +5,16 @@ import { priceValue } from "../functions/price.js"
 
 const list = document.querySelector("[data-cart-list]")
 const allPrice = document.querySelector("[data-all-price]")
+const cart = document.querySelector("[data-cart]")
 
 let allPriceResult = 0
+
+cart.addEventListener("click", e => {
+    e.preventDefault()
+    cart.classList.toggle('active')
+})
+
+document.querySelector
 
 list.addEventListener("click", async e => {
     e.preventDefault()
