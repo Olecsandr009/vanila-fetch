@@ -8,6 +8,10 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 	<link rel="stylesheet" href="./css/style.css">
 	<title>Internet-shop</title>
 </head>
@@ -45,23 +49,23 @@
 						</div>
 					</form>
 					<div class='header__content'>
-						<div class='header__profile'>
-							<button class='header__auth'>Увійти</button>
-							<button class='header__ava'>
-								<img src='./img/logo.png' alt='ava' />
-							</button>
+						<div data-cart-shadow class="header__cart-shadow"></div>
+						<div data-cart class="header__cart">
+							<a data-cart-link class='header__cart-link' href='/'>
+								<p data-cart-count class='header__cart-count'>0</p>
+								<svg style="width: 24px; height: 24px;">
+									<use xlink:href="./img/icons/cart.svg#cart"></use>
+								</svg>
+							</a>
+							<div class="header__cart-modal">
+								<p class="header__cart-text">Вибрані товари</p>
+								<ul data-cart-list class="header__cart-list"></ul>
+								<div class="header__cart-result">
+									<p class="header__cart-result-text">Загальна ціна: <span data-all-price>0</span>$</p>
+								</div>
+								<button class="header__cart-submit">Оформити замовлення</button>
+							</div>
 						</div>
-						<a class='header__likes' href='/'>
-							<svg style="width: 32px; height: 32px;">
-								<use xlink:href="./img/icons/like.svg#like"></use>
-							</svg>
-						</a>
-						<a class='header__cart' href='/'>
-							<p class='header__cart-count'>1</p>
-							<svg style="width: 32px; height: 32px;">
-								<use xlink:href="./img/icons/cart.svg#cart"></use>
-							</svg>
-						</a>
 					</div>
 				</div>
 			</div>
@@ -70,22 +74,6 @@
 		<main class='main'>
 			<section class='catalog'>
 				<div class='catalog__container container'>
-					<aside class='catalog__sidebar'>
-						<h2 class='catalog__sidebar-title'>Ціна:</h2>
-						<form class='catalog__range' action='#'>
-							<label class='catalog__range-label'>
-								<input class='catalog__range-input' type='number' placeholder='0'>
-							</label>
-							<span class='catalog__range-span'>-</span>
-							<label class='catalog__range-label'>
-								<input class='catalog__range-input' type='number' placeholder='100000'>
-							</label>
-						</form>
-						<h2 class='catalog__sidebar-title'>Катогорії:</h2>
-						<form class='catalog__check' action='#'>
-							<ul data-category-list class='catalog__list'></ul>
-						</form>
-					</aside>
 					<div class='catalog__content'>
 						<div class='catalog__catalog-data'>
 							<div class='catalog__catalog-text'>
@@ -93,29 +81,35 @@
 								<p class='catalog__count'>Кількість знайдених товарів: <span data-search-count>0</span>
 								</p>
 							</div>
-							<div class='catalog__catalog-sort'>
-								<select class='catalog__catalog-select'>
-									<option>За ціною</option>
-									<option>За рейтингом</option>
-								</select>
-							</div>
 						</div>
 						<div data-cards class='catalog__cards'></div>
 						<div class='catalog__pagination'></div>
 					</div>
 				</div>
-			</section>
-		</main>
 
-		<footer class='footer'>
-			<div class='footer__container container'>
-				<div class='footer__wrapper'>
-					<div class='footer__logo'>
-						<img src='./img/logo.png' alt='logo' />
+				<div data-popup class="popup">
+					<div data-shadow class="popup__shadow"></div>
+					<div class="popup__modal">
+						<h2 class="popup__title">Картка товару</h2>
+						<button data-popup-close class="popup__close">
+							<svg style="width: 16px; height: 16px;">
+								<use xlink:href="./img/icons/close.svg#close"></use>
+							</svg>
+						</button>
+						<div class="popup__slider">
+							<div class="popup__swiper swiper mySwiper2">
+								<div data-slider class="popup__wrapper swiper-wrapper"></div>
+							</div>
+							<div thumbsSlider="" class="popup__thumbs swiper mySwiper">
+								<div data-slider class="popup__thumbs-wrapper swiper-wrapper"></div>
+							</div>
+						</div>
+						<div data-content class="popup__content"></div>
 					</div>
 				</div>
-			</div>
-		</footer>
+
+			</section>
+		</main>
 	</div>
 
 	<script type='module' src='./js/main.js'></script>
