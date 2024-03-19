@@ -60,7 +60,9 @@ searchBtn.addEventListener('click', async e => {
     let products = ''
 
 	try {
-		products = await getSearch(input.value, 0)
+		if(input.value.length > 2) {
+			products = await getSearch(input.value, 0)
+		}
 
 		if(products.length) {
 			searchCount.innerHTML = products.length
@@ -85,7 +87,10 @@ searchBtn.addEventListener('click', async e => {
 const processChange = debounce(async () => {
 	if(inputValue.length > 2) {
 		try {
-			const products = await getSearch(inputValue, 5)
+			let products
+			if(inputValue.length > 2) {
+				products = await getSearch(inputValue, 5)
+			}
 			getResults(products, list)
 
 		} catch(e) {

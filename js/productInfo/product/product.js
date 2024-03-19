@@ -4,7 +4,7 @@ import { price } from "../../functions/price.js"
 export function content(product) {
     return `
         <div class="popup__left">
-            <h3 class="popup__name">${product.name}</h3>
+            <h3 class="popup__name">${product.title}</h3>
             <p class="popup__description">${product.description}</p>
             <p class="popup__brand">${product.brand}</p>
         </div>
@@ -23,11 +23,19 @@ export function content(product) {
     `
 }
 
-export function sliderList(product, element) {
-    if(product && product.images.length) {
-        product.images.forEach((image) => {
-            element.insertAdjacentHTML("beforeend", slider(image))
-        })
+export function sliderList(product, element, thumbs = false) {
+    if(thumbs) {
+        if(product && product.images.length) {
+            product.images.forEach((image) => {
+                element.insertAdjacentHTML("beforeend", slider(image))
+            })
+        }
+    } else {
+        if(product && product.images.length) {
+            product.images.forEach((image) => {
+                element.insertAdjacentHTML("beforeend", sliderThumbs(image))
+            })
+        }
     }
 }
 
@@ -37,4 +45,12 @@ export function slider(image) {
             <img src="${image}" alt="product"/>
         </div>
      `
+}
+
+export function sliderThumbs(image) {
+    return `
+        <div class="popup__thumbs-slide swiper-slide">
+            <img src="${image}" alt="product"/>
+        </div>
+    `
 }

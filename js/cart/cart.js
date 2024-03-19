@@ -6,12 +6,50 @@ import { priceValue } from "../functions/price.js"
 const list = document.querySelector("[data-cart-list]")
 const allPrice = document.querySelector("[data-all-price]")
 const cart = document.querySelector("[data-cart]")
+const shadow = document.querySelector("[data-cart-shadow]")
+
+const body = document.body
 
 let allPriceResult = 0
 
+document.addEventListener("click", e => {
+    e.preventDefault()
+
+    if(!e.target.closest("[data-cart]")) {
+        cart.classList.remove("active")
+        shadow.classList.remove('active')
+    }
+})
+
 cart.addEventListener("click", e => {
     e.preventDefault()
-    cart.classList.toggle('active')
+    
+    if(e.target.closest("[data-cart-link")) {
+        cart.classList.toggle('active')
+        shadow.classList.toggle("active")
+    }
+
+    if(cart.classList.contains("active")) {
+        body.style.overflow = "hidden"
+    } else {
+        body.style.overflow = "auto"
+    }
+})
+
+cart.addEventListener("mouseenter", e => {
+    e.preventDefault()
+
+    cart.classList.add('active')
+    shadow.classList.add("active")
+    body.style.overflow = "hidden"
+})
+
+cart.addEventListener("mouseleave", e => {
+    e.preventDefault()
+
+    cart.classList.remove("active")
+    shadow.classList.remove("active")
+    body.style.overflow = "auto"
 })
 
 document.querySelector

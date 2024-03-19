@@ -20,6 +20,12 @@ popup.addEventListener("productInfo", async e => {
                 element.innerHTML = ""
                 sliderList(product, element)
             })
+
+            slider[0].innerHTML = ""
+            slider[1].innerHTML = ""
+
+            sliderList(product, slider[1])
+            sliderList(product, slider[0], true)
         }
         
         data.insertAdjacentHTML("beforeend", content(product))
