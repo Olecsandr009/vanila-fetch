@@ -1,6 +1,7 @@
 import { deleteItemStorage, isHaveItemStorage, setLocalStorage } from "../functions/localStorage.js"
 import { getProduct } from "../product/functions/functions.js"
 import { content, sliderList } from "./product/product.js"
+import { image } from "../functions/image.js"
 
 const popup = document.querySelector("[data-popup]")
 const data = document.querySelector("[data-content]")
@@ -31,6 +32,14 @@ popup.addEventListener("productInfo", async e => {
         data.insertAdjacentHTML("beforeend", content(product))
     } catch(e) {
         console.log(e)
+    } finally {
+        const imageEl = document.querySelectorAll("[data-image]")
+
+        if(imageEl.length) {
+            imageEl.forEach((element) => {
+                // image(element)
+            })
+        }
     }
 })
 

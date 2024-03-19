@@ -40,17 +40,25 @@ export function sliderList(product, element, thumbs = false) {
 }
 
 export function slider(image) {
+    
+
      return `
         <div class="popup__slide swiper-slide">
-            <img src="${image}" alt="product"/>
+            <div class="popup__slide-media">
+                <img data-image src="${image}" alt="product"/>
+            </div>
         </div>
      `
 }
 
 export function sliderThumbs(image) {
+    
+
     return `
         <div class="popup__thumbs-slide swiper-slide">
-            <img src="${image}" alt="product"/>
+            <div class="popup__thumbs-slide-media">
+                <img data-image src="${image}" alt="product"/>
+            </div>
         </div>
     `
 }

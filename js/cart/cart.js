@@ -8,6 +8,8 @@ const allPrice = document.querySelector("[data-all-price]")
 const cart = document.querySelector("[data-cart]")
 const shadow = document.querySelector("[data-cart-shadow]")
 
+const count = document.querySelector("[data-cart-count]")
+
 const body = document.body
 
 let allPriceResult = 0
@@ -89,6 +91,12 @@ document.addEventListener("DOMContentLoaded", e => {
     const json = getLocalStorage("products")
     const products = JSON.parse(json)
 
+    if(products.length) {
+        count.classList.add("count")
+    } else {
+        count.classList.remove("count   ")
+    }
+
     allPriceResult = 0
 
     if(products.length) {
@@ -98,6 +106,8 @@ document.addEventListener("DOMContentLoaded", e => {
 
             allPriceResult += newPrice
         })
+
+        count.innerHTML = products.length
     }
 
     allPrice.innerHTML = allPriceResult
@@ -108,6 +118,12 @@ document.addEventListener("localStorage", e => {
     const json = getLocalStorage("products")
     const products = JSON.parse(json)
 
+    if(products.length) {
+        count.classList.add("count")
+    } else {
+        count.classList.remove("count")
+    }
+
     allPriceResult = 0
 
     if(products.length) {
@@ -117,6 +133,8 @@ document.addEventListener("localStorage", e => {
 
             allPriceResult += newPrice
         })
+
+        count.innerHTML = products.length
     }
 
     allPrice.innerHTML = allPriceResult

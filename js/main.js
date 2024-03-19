@@ -10,6 +10,7 @@ const swiper = new Swiper(".mySwiper", {
     spaceBetween: 10,
     slidesPerView: 4,
     freeMode: true,
+    height: 95
   });
 
 const swiper2 = new Swiper(".mySwiper2", {
@@ -21,4 +22,5 @@ const swiper2 = new Swiper(".mySwiper2", {
     thumbs: {
       swiper: swiper,
     },
+    height: 450
   });
